@@ -1,33 +1,14 @@
-import About from "./About";
-import BasicButton from "./BasicButton";
-import BasicInput from "./BasicInput";
-import BasicTextarea from "./BasicTextarea";
-import Blob from "./Blob";
-import Contact from "./Contact";
-import Error404 from "./Errors/404";
-import Experience from "./Experience";
-import Main from "./Main";
-import Navbar from "./Navbar";
-import ParallaxText from "./ParallaxText";
-import Reveal from "./Reveal";
-import Tech from "./Tech";
-import Sphere from "./Sphere";
-import SphereCanvas from "./SphereCanvas";
-
-export {
-    About,
-    BasicButton,
-    BasicInput,
-    BasicTextarea,
-    Blob,
-    Contact,
-    Error404,
-    Experience,
-    Main,
-    Navbar,
-    ParallaxText,
-    Reveal,
-    Tech,
-    SphereCanvas,
-    Sphere,
-};
+export { Overlays } from "./Overlays";
+export { KonamiEgg } from "./KonamiEgg";
+export { StatusBar } from "./StatusBar";
+export { Hero } from "./Hero";
+export { Marquee } from "./Marquee";
+export { StatsBand } from "./StatsBand";
+export { Bento } from "./Bento";
+export { Experience } from "./Experience";
+export { Principles } from "./Principles";
+export { Contact } from "./Contact";
+export { Closer } from "./Closer";
+export { Footer } from "./Footer";
+export { Error404 } from "./Error404";
+export { Reveal } from "./Reveal";

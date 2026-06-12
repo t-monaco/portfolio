@@ -1,32 +1,179 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap");
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+    --color-ink: #0a0a0a;
+    --color-ink-2: #0d0d0d;
+    --color-panel: #131313;
+    --color-line: #1f1f1f;
+    --color-line-2: #2a2a2a;
+    --color-paper: #f0eee6;
+    --color-acid: #c4f542;
+    --color-coral: #ff4d2e;
+    --color-muted: #8a8a8a;
+    --color-faint: #555555;
+    --color-online: #4ade80;
 
-* {
+    --font-display: "Space Grotesk", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, monospace;
+    --font-serif: "Instrument Serif", serif;
+}
+
+:root {
+    --mx: 50%;
+    --my: 50%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: "Roboto Mono", "DM Sans", sans-serif;
-    scroll-behavior: smooth;
+    background: var(--color-ink);
+    color: var(--color-paper);
+    font-family: var(--font-display);
+    -webkit-font-smoothing: antialiased;
     color-scheme: dark;
 }
 
-@layer components {
-    .my-section {
-        @apply w-screen min-h-screen relative grid place-items-center;
-    }
+body {
+    overflow-x: hidden;
+}
 
-    .common-content {
-        @apply w-screen  md:max-w-[1170px] text-justify px-8 flex flex-col gap-10 justify-center mx-auto pt-[4rem] md:pt-0;
-    }
+::selection {
+    background: var(--color-acid);
+    color: var(--color-ink);
+}
 
-    .common-content .common-title {
-        @apply text-5xl font-bold md:text-6xl;
-    }
+[data-magnet] {
+    will-change: transform;
+    transition: transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
 
-    .common-content .text-container {
-        @apply flex flex-col gap-4;
+@keyframes blink {
+    0%,
+    49% {
+        opacity: 1;
+    }
+    50%,
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+@keyframes radar-sweep {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes pulse-dot {
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.4);
+    }
+}
+@keyframes drift {
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+    33% {
+        transform: translate(30px, -20px);
+    }
+    66% {
+        transform: translate(-20px, 25px);
+    }
+}
+@keyframes scan-line {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(2000%);
+    }
+}
+@keyframes commit-fade {
+    from {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes type-bar {
+    0%,
+    100% {
+        height: 30%;
+    }
+    50% {
+        height: 100%;
+    }
+}
+@keyframes heartbeat {
+    0%,
+    70%,
+    100% {
+        transform: scale(1);
+    }
+    35% {
+        transform: scale(1.12);
+    }
+}
+@keyframes float-up {
+    from {
+        transform: translate(-50%, 20px);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
+@keyframes side-tick {
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+@keyframes wave {
+    0%,
+    100% {
+        transform: rotate(45deg) translateY(0);
+    }
+    50% {
+        transform: rotate(45deg) translateY(-6px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
     }
 }
