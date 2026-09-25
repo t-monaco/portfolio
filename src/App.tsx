@@ -1,17 +1,38 @@
-import { About, Contact, Experience, Main, Navbar } from "./components";
+import {
+    Bento,
+    Closer,
+    Contact,
+    History,
+    Footer,
+    Hero,
+    KonamiEgg,
+    Marquee,
+    Overlays,
+    Principles,
+    StatsBand,
+    StatusBar,
+} from "./components";
 
-const App: React.FC<NonNullable<unknown>> = () => {
+export default function App() {
     return (
-        <div className="relative z-0 bg-[#242431] overflow-hidden">
-            <div className=" bg-cover bg-no-repeat bg-center relative">
-                <Navbar />
-                <Main />
-                <About />
-                <Experience />
+        <div
+            className="relative z-0 overflow-clip bg-ink"
+            style={{ isolation: "isolate" }}
+        >
+            <Overlays />
+            <KonamiEgg />
+            <StatusBar />
+            <main className="relative z-[2]">
+                <Hero />
+                <Marquee />
+                <StatsBand />
+                <Bento />
+                <History />
+                <Principles />
                 <Contact />
-            </div>
+                <Closer />
+                <Footer />
+            </main>
         </div>
     );
-};
-
-export default App;
+}
