@@ -280,10 +280,6 @@ function AiCard() {
                         <span className="text-paper">ai --shipped</span>
                     </div>
                     <div className="pl-4">
-                        → LLM-powered features in production{" "}
-                        <span className="text-faint">// see history</span>
-                    </div>
-                    <div className="pl-4">
                         → ML Specialization —{" "}
                         <span className="text-paper">Stanford</span>{" "}
                         <span className="text-faint">(2023)</span>

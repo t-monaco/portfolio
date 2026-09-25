@@ -205,9 +205,8 @@ export const timeline: TimelineEntry[] = [
         badge: "HEAD",
         title: "ReadyTech",
         subtitle: "software engineer · sydney",
-        // TODO: confirm LLM wording.
-        body: "Building Ready Student — education products on a Next.js stack. UX-led, standards-driven, and shipping LLM-powered features with cross-functional teams.",
-        tags: ["next.js", "typescript", "mui", "✦ llm"],
+        body: "Building Ready Student — education products on a Next.js stack. Software engineering and product development with cross-functional teams: UX-led, standards-driven, shipped end to end.",
+        tags: ["next.js", "typescript", "mui", "product"],
         logo: readytech,
         variant: "current",
     },
