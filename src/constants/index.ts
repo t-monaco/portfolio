@@ -96,7 +96,7 @@ export const principles: Principle[] = [
     },
 ];
 
-export type SocialIcon = "github" | "x" | "linkedin";
+export type SocialIcon = "github" | "linkedin";
 export type Social = {
     label: string;
     href: string;
@@ -111,8 +111,6 @@ export const socials: Social[] = [
         href: "https://www.linkedin.com/in/tamonaco/",
         icon: "linkedin",
     },
-    // TODO: real X URL.
-    { label: "twitter / x", href: "#", icon: "x" },
     { label: "resume.pdf ↓", href: profile.resume, accent: true },
 ];
 
