@@ -106,8 +106,11 @@ export type Social = {
 
 export const socials: Social[] = [
     { label: "github", href: "https://github.com/t-monaco", icon: "github" },
-    // TODO: real LinkedIn URL.
-    { label: "linkedin", href: "#", icon: "linkedin" },
+    {
+        label: "linkedin",
+        href: "https://www.linkedin.com/in/tamonaco/",
+        icon: "linkedin",
+    },
     // TODO: real X URL.
     { label: "twitter / x", href: "#", icon: "x" },
     { label: "resume.pdf ↓", href: profile.resume, accent: true },
