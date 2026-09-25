@@ -18,13 +18,15 @@ function generate(cols: number, rows: number): HeatCell[] {
             else level = 4;
             if (recency > 0.7 && Math.random() > 0.4)
                 level = Math.min(4, level + 1);
-            cells.push({ color: COLORS[level], delay: (col * rows + row) * 4 });
+            cells.push({ color: COLORS[level], delay: (col * rows + row) * 3 });
         }
     }
     return cells;
 }
 
-const CELLS = generate(26, 7);
+export const HEATMAP_COLS = 52;
+
+const CELLS = generate(HEATMAP_COLS, 7);
 
 export function useHeatmap(): HeatCell[] {
     return CELLS;

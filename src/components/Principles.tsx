@@ -1,9 +1,10 @@
 import { principles } from "../constants";
+import { sectionWrap } from "./classes";
 import { Reveal } from "./Reveal";
 
 export function Principles() {
     return (
-        <section id="principles" className="mx-auto max-w-[1320px] px-7 pb-24 pt-16">
+        <section id="principles" className={`${sectionWrap} py-16 md:py-24`}>
             <Reveal className="mb-[18px] font-mono text-xs tracking-[0.15em] text-acid">
                 // 04 — PRINCIPLES.YAML
             </Reveal>
@@ -18,42 +19,42 @@ export function Principles() {
             </Reveal>
 
             {/* IDE tab strip */}
-            <div className="flex gap-1 border-b border-line pl-1">
-                <div className="flex items-center gap-2 rounded-t-lg border border-b-0 border-line bg-panel px-[18px] py-2.5 font-mono text-xs text-acid">
-                    <span className="text-coral">●</span> build.md
-                </div>
-                <div className="px-[18px] py-2.5 font-mono text-xs text-faint">
-                    move.md
-                </div>
-                <div className="px-[18px] py-2.5 font-mono text-xs text-faint">
-                    fly.md
-                </div>
-                <div className="flex-1 border-b border-line" />
-            </div>
+            <Reveal className="flex gap-1 overflow-x-auto border-b border-line pl-1">
+                {principles.map((p, i) =>
+                    i === 0 ? (
+                        <div
+                            key={p.tab}
+                            className="whitespace-nowrap rounded-t-lg border border-b-0 border-line bg-panel px-[18px] py-2.5 font-mono text-xs text-acid"
+                        >
+                            <span className="text-coral">●</span> {p.tab}
+                        </div>
+                    ) : (
+                        <div
+                            key={p.tab}
+                            className="whitespace-nowrap px-[18px] py-2.5 font-mono text-xs text-faint"
+                        >
+                            {p.tab}
+                        </div>
+                    )
+                )}
+            </Reveal>
 
             <div className="grid grid-cols-1 overflow-hidden rounded-b-2xl border border-t-0 border-line bg-panel md:grid-cols-3">
                 {principles.map((p, i) => (
-                    <div
+                    <Reveal
                         key={p.tab}
-                        className={`p-10 ${
-                            i < 2
+                        className={`px-[22px] py-7 md:px-9 md:py-10 ${
+                            i < principles.length - 1
                                 ? "border-b border-line md:border-b-0 md:border-r"
                                 : ""
                         }`}
                     >
-                        <div className="mb-5 flex items-center gap-3">
-                            <div
-                                className={`flex h-9 w-9 items-center justify-center rounded-full border font-mono text-xs ${
-                                    p.accent === "coral"
-                                        ? "border-coral bg-[rgba(255,77,46,0.12)] text-coral"
-                                        : "border-acid bg-[rgba(196,245,66,0.12)] text-acid"
-                                }`}
-                            >
-                                {p.no}
-                            </div>
-                            <div className="font-mono text-[11px] tracking-[0.12em] text-muted">
-                                {p.kicker}
-                            </div>
+                        <div
+                            className={`mb-5 font-mono text-[11px] tracking-[0.12em] ${
+                                p.accent === "coral" ? "text-coral" : "text-acid"
+                            }`}
+                        >
+                            {p.kicker}
                         </div>
                         <h3 className="mb-3.5 font-display text-[26px] font-semibold leading-[1.15] tracking-[-0.02em] text-paper">
                             {p.title}
@@ -61,7 +62,7 @@ export function Principles() {
                         <p className="m-0 font-display text-[15px] leading-[1.65] text-muted">
                             {p.body}
                         </p>
-                    </div>
+                    </Reveal>
                 ))}
             </div>
         </section>

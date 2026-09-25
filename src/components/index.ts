@@ -5,7 +5,7 @@ export { Hero } from "./Hero";
 export { Marquee } from "./Marquee";
 export { StatsBand } from "./StatsBand";
 export { Bento } from "./Bento";
-export { Experience } from "./Experience";
+export { History } from "./History";
 export { Principles } from "./Principles";
 export { Contact } from "./Contact";
 export { Closer } from "./Closer";

@@ -2,7 +2,7 @@ import {
     Bento,
     Closer,
     Contact,
-    Experience,
+    History,
     Footer,
     Hero,
     KonamiEgg,
@@ -16,7 +16,7 @@ import {
 export default function App() {
     return (
         <div
-            className="relative z-0 overflow-hidden bg-ink"
+            className="relative z-0 overflow-clip bg-ink"
             style={{ isolation: "isolate" }}
         >
             <Overlays />
@@ -27,7 +27,7 @@ export default function App() {
                 <Marquee />
                 <StatsBand />
                 <Bento />
-                <Experience />
+                <History />
                 <Principles />
                 <Contact />
                 <Closer />
