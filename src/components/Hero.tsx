@@ -1,8 +1,10 @@
 import { profile, roles } from "../constants";
+import { arm, KONAMI_GLYPHS, useKonami } from "../hooks/useKonami";
 import { useTypewriter } from "../hooks/useTypewriter";
 
 export function Hero() {
     const typed = useTypewriter(roles);
+    const { step } = useKonami();
 
     return (
         <section className="relative mx-auto flex max-w-[1320px] flex-col justify-center px-[18px] pb-14 pt-10 md:min-h-[calc(100vh-44px)] md:px-7 md:pb-20 md:pt-12">
@@ -93,10 +95,25 @@ export function Hero() {
                     />
                 </div>
                 <div className="flex items-center gap-3">
-                    <span>press</span>
-                    <kbd className="rounded-md border border-line-2 bg-panel px-2 py-1 font-mono text-[11px] text-paper">
-                        ↑↑↓↓←→←→ba
-                    </kbd>
+                    <span>arm the drone</span>
+                    <button
+                        type="button"
+                        onClick={arm}
+                        title="Type the code, or click"
+                        aria-label="Arm the drone"
+                        className="inline-flex cursor-pointer gap-[2px] rounded-md border border-line-2 bg-panel px-2 py-1 font-mono text-[11px] transition-colors duration-200 hover:border-acid"
+                    >
+                        {KONAMI_GLYPHS.map((g, i) => (
+                            <span
+                                key={i}
+                                className={`transition-colors duration-150 ${
+                                    i < step ? "text-acid" : "text-paper"
+                                }`}
+                            >
+                                {g}
+                            </span>
+                        ))}
+                    </button>
                     <span className="text-line-2">·</span>
                     <span>{profile.version}</span>
                 </div>
